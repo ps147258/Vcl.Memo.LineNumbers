@@ -1,22 +1,22 @@
 //########################################################################//
 //                                                                        //
-//  ¤å¦r½s¿è®Ø¦æ½s¸¹¼Ò²Õ                                                  //
+//  æ–‡å­—ç·¨è¼¯æ¡†è¡Œç·¨è™Ÿæ¨¡çµ„                                                  //
 //                                                                        //
 //########################################################################//
-// Ãş«¬¡GVCL¤¸¥ó¥\¯à¥[±j                                                  //
-// ½s¼g¡GWei-Lun Huang                                                    //
-// ª©Åv¡GCopyright (c) 2020 Wei-Lun Huang                                 //
-// »¡©ú¡GÃ¸»s¦r¦ê¦æ½s¸¹¡C                                                 //
+// é¡å‹ï¼šVCLå…ƒä»¶åŠŸèƒ½åŠ å¼·                                                  //
+// ç·¨å¯«ï¼šWei-Lun Huang                                                    //
+// ç‰ˆæ¬Šï¼šCopyright (c) 2020 Wei-Lun Huang                                 //
+// èªªæ˜ï¼šç¹ªè£½å­—ä¸²è¡Œç·¨è™Ÿã€‚                                                 //
 //                                                                        //
-// §@¥Î¡G                                                                 //
+// ä½œç”¨ï¼š                                                                 //
 //   1. TLineNumber                                                       //
-//      ¦bÃöÁpªº±±¨î¶µ¤¤Ã¸»s¦r¦êªº¦æ½s¸¹                                  //
-//      * ª`·N¡GÄÀ©ñª«¥ó®É»İ­nª`·Nµ{¦¡¬yµ{¡A¥H¥ı«Ø¥ß¥ıÄÀ©ñ¬°­ì«h¡C        //
-//              ½Ğ°Ñ¾\ Bind »P Unbind ¥\¯à¡AWindowProc ÂĞ»\¡C             //
+//      åœ¨é—œè¯çš„æ§åˆ¶é …ä¸­ç¹ªè£½å­—ä¸²çš„è¡Œç·¨è™Ÿ                                  //
+//      * æ³¨æ„ï¼šé‡‹æ”¾ç‰©ä»¶æ™‚éœ€è¦æ³¨æ„ç¨‹å¼æµç¨‹ï¼Œä»¥å…ˆå»ºç«‹å…ˆé‡‹æ”¾ç‚ºåŸå‰‡ã€‚        //
+//              è«‹åƒé–± Bind èˆ‡ Unbind åŠŸèƒ½ï¼ŒWindowProc è¦†è“‹ã€‚             //
 //                                                                        //
-// ¨ä¥L¡G                                                                 //
+// å…¶ä»–ï¼š                                                                 //
 //                                                                        //
-// ³Ì«áÅÜ§ó¤é´Á¡G2020¦~12¤ë12¤é                                           //
+// æœ€å¾Œè®Šæ›´æ—¥æœŸï¼š2020å¹´12æœˆ12æ—¥                                           //
 //                                                                        //
 //########################################################################//
 
@@ -77,11 +77,11 @@ type
     procedure SetBackgroundColor(Color: TColor);
   protected
     //
-    // ·í Memo ©Î Ã¸»s¥Ø¼Ğ±±¨î¶µ ªº¦ì¸m©Î¤j¤pµo¥ÍÅÜ¤Æ®ÉÀ³©I¥s¡C
+    // ç•¶ Memo æˆ– ç¹ªè£½ç›®æ¨™æ§åˆ¶é … çš„ä½ç½®æˆ–å¤§å°ç™¼ç”Ÿè®ŠåŒ–æ™‚æ‡‰å‘¼å«ã€‚
     // When Memo or target drawing control item size changes, call this.
     procedure SyncCanvas;
 
-    // ·í Memo ¦rÅéÅÜ§ó«á®ÉÀ³©I¥s¡A¥H«O«ùÃ¸»s¤å¦r®Éªº¤j¤p¦ì¸m¡C
+    // ç•¶ Memo å­—é«”è®Šæ›´å¾Œæ™‚æ‡‰å‘¼å«ï¼Œä»¥ä¿æŒç¹ªè£½æ–‡å­—æ™‚çš„å¤§å°ä½ç½®ã€‚
     // When the Memo font is changed to keep the size and position when drawing text.
     procedure SyncFont; overload;
     procedure SyncFont(Color: TColor); overload;
@@ -91,38 +91,38 @@ type
     procedure ControlProc(var Message: TMessage);
 
   public
-    // ·í¦³ÂĞ»\ Memo »P Ã¸»s¥Ø¼Ğ±±¨î¶µ ªº WindowProc ®É¤£«ØÄ³³]©w¥DÅé¤¸¥ó AOwner¡C
-    // ¦]¬°»İ­n´x±±ÁÙ­ì®Éªº¨ç¼Æ°õ¦æ¦ì§}¡A¶¶§Ç¿ù»~±N¾É­P°õ¦æ¥X²{ÄY­«¿ù»~¡C
+    // ç•¶æœ‰è¦†è“‹ Memo èˆ‡ ç¹ªè£½ç›®æ¨™æ§åˆ¶é … çš„ WindowProc æ™‚ä¸å»ºè­°è¨­å®šä¸»é«”å…ƒä»¶ AOwnerã€‚
+    // å› ç‚ºéœ€è¦æŒæ§é‚„åŸæ™‚çš„å‡½æ•¸åŸ·è¡Œä½å€ï¼Œé †åºéŒ¯èª¤å°‡å°è‡´åŸ·è¡Œå‡ºç¾åš´é‡éŒ¯èª¤ã€‚
     // It is not recommended to set the belonging component AOwner when WindowProc
     // overrides of Memo or draw target control.
     // Because need to handle the execution address of the function when restoring,
     // a sequence mistake will make serious execution errors.
     constructor Create(AOwner: TComponent); overload; override;
 
-    // «Ø¥ß®É³]©w¨Ó·½ Memo »P ¥Ø¼Ğ±±¨î¶µ¡C
+    // å»ºç«‹æ™‚è¨­å®šä¾†æº Memo èˆ‡ ç›®æ¨™æ§åˆ¶é …ã€‚
     // Set the source Memo and target controls when creating.
     constructor Create(AOwner: TComponent; AMemo: TCustomMemo; AControl: TControl; Immediate: Boolean = False); reintroduce; overload;
 
-    // «Ø¥ß®É³]©w¨Ó·½ Memo ¨Ã±N¥Ø¼Ğ±±¨î¶µ«ü©w¬°¸Ó Memo ªº¤÷±±¨î¶µ¡C
+    // å»ºç«‹æ™‚è¨­å®šä¾†æº Memo ä¸¦å°‡ç›®æ¨™æ§åˆ¶é …æŒ‡å®šç‚ºè©² Memo çš„çˆ¶æ§åˆ¶é …ã€‚
     // Set the source Memo when creating and specify the target control as the parent control of the Memo.
     constructor Create(AOwner: TComponent; AMemo: TCustomMemo; Immediate: Boolean = False); reintroduce; overload;
 
     destructor Destroy; override;
 
-    // «Ø¥ß³s°Ê »P ¸Ñ°£³s°Ê
-    // ª`·N°õ¦æ¶¶§Ç¡A·í¦³ÂĞ»\ Memo »P Ã¸»s¥Ø¼Ğ±±¨î¶µ ªº WindowProc ®É¡A³o­Ó¶¶§Ç«Ü­«­n¡C
+    // å»ºç«‹é€£å‹• èˆ‡ è§£é™¤é€£å‹•
+    // æ³¨æ„åŸ·è¡Œé †åºï¼Œç•¶æœ‰è¦†è“‹ Memo èˆ‡ ç¹ªè£½ç›®æ¨™æ§åˆ¶é … çš„ WindowProc æ™‚ï¼Œé€™å€‹é †åºå¾ˆé‡è¦ã€‚
     // About Bind and Unbind.
     // Attention, the order of execution. If the WindowProc of Memo or draw target control items be covers, the order is very important.
 
-    // «Ø¥ß³s°Ê
+    // å»ºç«‹é€£å‹•
     // Manually bind linkage components.
     procedure Bind(AMemo: TCustomMemo; AControl: TControl);
 
-    // ¸Ñ°£³s°Ê
+    // è§£é™¤é€£å‹•
     // Manually unbind.
     procedure Unbind;
 
-    // °Ï°ì¥¢®Ä¡A¨Ï±±¨î¶µ¦¬¨ìÃ¸»s­n¨D«á¯à­«·sÃ¸»s
+    // å€åŸŸå¤±æ•ˆï¼Œä½¿æ§åˆ¶é …æ”¶åˆ°ç¹ªè£½è¦æ±‚å¾Œèƒ½é‡æ–°ç¹ªè£½
     procedure Invalidate;
     function Update: Boolean;
 
@@ -132,11 +132,11 @@ type
     property FontColor: TColor read FFontColor write SetFontColor;
     property BackgroundColor: TColor read FBackgroundColor write SetBackgroundColor;
 
-    // ·í«ü©wÃ¸»sªº±±¨î¶µ«D¤÷±±¨î¶µ®ÉªºÃ¸»s¶¡®æ¡C
-    // The drawing distance when the specified control item is not the parent control item.
+    // ç•¶æŒ‡å®šç¹ªè£½ç›®çš„ç‚º Memo çš„çˆ¶æ§åˆ¶é …æ™‚çš„ç¹ªè£½é–“æ ¼ã€‚
+    // The left distance when drawing on the parent control of TMemo.
     property Distance: Integer read FDistance write FDistance;
 
-    // ¬O§_¥ß§Y§ó·sÃ¸»s
+    // æ˜¯å¦ç«‹å³æ›´æ–°ç¹ªè£½
     // Update drawing immediately when Memo changed.
     property Immediate: Boolean read FImmediate write FImmediate;
   end;
